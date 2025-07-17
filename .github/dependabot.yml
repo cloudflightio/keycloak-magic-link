@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/keycloak-magic-link"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    groups:
+      keycloak:
+        patterns:
+          - "org.keycloak:keycloak-*"
+      testcontainers:
+        patterns:
+          - "org.testcontainers:testcontainers-*"
+          - "org.testcontainers:junit-jupiter"
+          - "com.github.dasniko:testcontainers-keycloak"
+      junit:
+        patterns:
+          - "org.junit.jupiter:junit-jupiter*"
+      playwright:
+        patterns:
+          - "com.microsoft.playwright:playwright"
